@@ -1,8 +1,5 @@
 pipeline {
-    agent { docker { image 'maven:3.3.3' } }
-    options {
-        skipStagesAfterUnstable()
-    }
+    agent any
     stages {
         stage('Build') {
             steps {
