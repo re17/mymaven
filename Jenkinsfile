@@ -1,9 +1,14 @@
 pipeline {
-  agent any
+  agent {
+    docker {
+      image 'maven:3.39-jdk-8'
+    }
+
+  }
   stages {
-    stage('Initialise') {
+    stage('Intialise') {
       steps {
-        echo 'Starting the Pipeline'
+        sh 'mvn clean'
       }
     }
   }
